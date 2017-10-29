@@ -6,7 +6,7 @@
 
 ## Implementations
 
-* [Sendgrid](https://godoc.org/github.com/Nivl/go-logger/implementations/sendgridmailer)
-* [Print](https://godoc.org/github.com/Nivl/go-logger/implementations/printmailer)
-* [No-op](https://godoc.org/github.com/Nivl/go-logger/implementations/noopmailer)
-* [GoMock](https://godoc.org/github.com/Nivl/go-logger/implementations/mockmailer)
+* [Sendgrid](https://godoc.org/github.com/Nivl/go-mailer/implementations/sendgridmailer)
+* [Print](https://godoc.org/github.com/Nivl/go-mailer/implementations/printmailer)
+* [No-op](https://godoc.org/github.com/Nivl/go-mailer/implementations/noopmailer)
+* [GoMock](https://godoc.org/github.com/Nivl/go-mailer/implementations/mockmailer)
