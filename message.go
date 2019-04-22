@@ -21,7 +21,7 @@ func NewMessage(templateID string) *Message {
 }
 
 // SetVar set a variable to the message
-func (msg *Message) SetVar(name string, value string) {
+func (msg *Message) SetVar(name, value string) {
 	fullName := fmt.Sprintf("-%s-", name)
 	msg.Vars[fullName] = value
 }

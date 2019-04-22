@@ -30,9 +30,9 @@ func (s *Sendgrid) SendStackTrace(trace []byte, message string, context map[stri
 	}
 
 	msg := mailer.NewMessage(s.StacktraceTemplateID)
-	stacktrace := string(trace[:])
+	stacktrace := string(trace)
 
-	msg.Body = strings.Replace(stacktrace, "\n", "<br>", -1)
+	msg.Body = strings.ReplaceAll(stacktrace, "\n", "<br>")
 
 	htmlContext := fmt.Sprintf("<li><strong>Error</strong>: %s</li>\n", message)
 	for k, v := range context {
@@ -70,9 +70,9 @@ func (s *Sendgrid) Send(msg *mailer.Message) error {
 }
 
 // New creates and returns a new mailer using sendgrid
-func New(APIKey, defaultFrom, defaultTo, stacktraceUUID string) *Sendgrid {
+func New(apiKey, defaultFrom, defaultTo, stacktraceUUID string) *Sendgrid {
 	return &Sendgrid{
-		APIKey:               APIKey,
+		APIKey:               apiKey,
 		DefaultFrom:          defaultFrom,
 		DefaultTo:            defaultTo,
 		StacktraceTemplateID: stacktraceUUID,
